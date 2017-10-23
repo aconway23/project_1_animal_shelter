@@ -23,16 +23,16 @@ class Owner
   def save
     sql = "INSERT INTO owners
     (
-      first_name,
-      last_name,
-      review_date,
-      address,
-      email,
-      phone
+    first_name,
+    last_name,
+    review_date,
+    address,
+    email,
+    phone
     )
     VALUES
     (
-      $1, $2, $3, $4, $5, $6
+    $1, $2, $3, $4, $5, $6
     )
     RETURNING *"
     values = [@first_name, @last_name, @review_date, @address, @email, @phone]
@@ -43,7 +43,7 @@ class Owner
 
 
   def self.all
-    sql = 'SELECT * FROM owners'
+    sql = "SELECT * FROM owners"
     values = []
     owners = SqlRunner.run(sql, values)
     result = owners.map{ |owner| Owner.new(owner)}
@@ -51,9 +51,35 @@ class Owner
   end
 
 
-  # def delete
-  #   sql =
-  # end
+  def self.delete_all()
+    sql = "DELETE FROM owners"
+    values = []
+    SqlRunner.run( sql, values )
+
+  end
+
+
+  def update()
+    sql = "UPDATE owners
+    SET
+    (
+    first_name,
+    last_name,
+    review_date,
+    address,
+    email,
+    phone
+
+    ) =
+    (
+    $1, $2, $3, $4, $5, $6
+    )
+    WHERE id = $7"
+    values = [@first_name, @last_name, @review_date, @address, @email, @phone, @id]
+    SqlRunner.run( sql, values )
+  end
+
+
 
 
 

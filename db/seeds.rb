@@ -1,6 +1,7 @@
 require_relative('../models/owner')
 require('pry')
-# Delete all
+
+Owner.delete_all()
 
 owner1 = Owner.new({
   "first_name" => "Dawg",
