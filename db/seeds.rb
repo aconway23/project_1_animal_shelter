@@ -1,4 +1,5 @@
-require_relative('../models/owner')
+require_relative('../models/owner.rb')
+require_relative('../models/animal.rb')
 require('pry')
 
 Owner.delete_all()
@@ -15,9 +16,10 @@ hash = {
 owner1 = Owner.new(hash)
 owner1.save()
 
-Animal.delete_all()
+ # Animal.delete_all()
 
-hash = {
+animal1 = Animal.new({
+
   "name" => "Tramp",
   "breed" => "Mongrel",
   "city" => "Edinburgh",
@@ -25,39 +27,47 @@ hash = {
   "adopt_date" => "2000-03-03",
   "adopted_by" => owner1.id,
   "adoptable" => true
-}
+})
 
-animal1 = Animal.new(hash)
 animal1.save()
 
-hash = {
+
+
+animal2 = Animal.new({
+
   "name" => "Tim",
   "breed" => "Gorilla",
   "city" => "Edinburgh",
   "admis_date" => "2001-04-05",
   "adoptable" => false
-}
+})
 
-animal2 = Animal.new(hash)
 animal2.save()
 
-hash = {
+
+
+animal3 = Animal.new({
+
   "name" => "Ralph",
   "breed" => "Panda",
   "city" => "Edinburgh",
   "admis_date" => "2006-08-08",
   "adoptable" => false
-}
+})
 
-animal3 = Animal.new(hash)
 animal3.save()
 
-hash = {
+
+animal4 = Animal.new({
+
   "name" => "Princess",
   "breed" => "Crocodile",
   "city" => "Edinburgh",
   "admis_date" => "2010-03-01",
-}
+  "adoptable" => false
+})
+
+animal4.save()
 
 binding.pry
 nil

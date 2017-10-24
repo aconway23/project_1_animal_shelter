@@ -1,6 +1,5 @@
-DROP TABLE IF EXISTS owners;
 DROP TABLE IF EXISTS animals;
-
+DROP TABLE IF EXISTS owners;
 
 CREATE TABLE owners (
   id serial4 primary key,
@@ -21,5 +20,4 @@ CREATE TABLE animals (
   breed varchar(255),
   adopted_by int4 references owners(id),
   adoptable boolean
-
 );

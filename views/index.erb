@@ -1,2 +1,16 @@
 <% @owners.each do |owner| %>
-  <p>First_name: <%=
+<div class="owner">
+  <p>First name: <%= owner.first_name %></p>
+  <p>Last name: <%= owner.last_name %></p>
+  <p>Review date: <%= owner.review_date %></p>
+  <p>Address: <%= owner.address %></p>
+  <p>Email: <%= owner.email %></p>
+  <p>Phone: <%= owner.phone %></p>
+</div>
+<% end %>
+
+
+
+
+
+  
