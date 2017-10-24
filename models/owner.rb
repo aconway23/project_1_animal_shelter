@@ -4,9 +4,7 @@ require_relative('../db/sql_runner/')
 
 class Owner
 
-  attr_reader :first_name, :last_name, :review_date
-  attr_accessor :address, :email, :phone, :id
-
+  attr_reader :first_name, :last_name, :review_date, :address, :email, :phone, :id
 
   def initialize(options)
     @first_name = options['first_name']
@@ -15,9 +13,16 @@ class Owner
     @address = options['address']
     @email = options['email']
     @phone = options['phone']
-    @id = options['id'].to_i
 
+    if options["id"] != nil
+      @id = options['id'].to_i
+    end
   end
+
+
+
+
+
 
 
   def save
@@ -55,7 +60,7 @@ class Owner
     sql = "DELETE FROM owners"
     values = []
     SqlRunner.run( sql, values )
-
+    return nil
   end
 
 
@@ -79,6 +84,14 @@ class Owner
     SqlRunner.run( sql, values )
   end
 
+
+  def self.find(id)
+    sql = "SELECT * FROM owners WHERE id = $1"
+    values = [id]
+    owners = SqlRunner.run( sql, values )
+    result = Owner.new( owners.first )
+    return result
+  end
 
 
 
