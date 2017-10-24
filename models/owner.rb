@@ -20,6 +20,12 @@ class Owner
   end
 
 
+
+  def pretty_name()
+      return "#{@first_name} #{@last_name}"
+  end
+
+
   def save
     sql = "INSERT INTO owners
     (
