@@ -80,4 +80,12 @@ class Animal
       SqlRunner.run( sql, values )
     end
 
+    def self.find(id)
+      sql = "SELECT * FROM animals WHERE id = $1"
+      values = [id]
+      animals = SqlRunner.run( sql, values )
+      result = Animal.new( animals.first )
+      return result
+    end 
+
 end
