@@ -59,4 +59,25 @@ class Animal
       return nil
     end
 
+    def update
+      sql = "UPDATE animals
+      SET
+      (
+      name,
+      breed,
+      city,
+      admis_date,
+      adopt_date,
+      adopted_by,
+      adoptable
+
+      ) =
+      (
+      $1, $2, $3, $4, $5, $6, $7
+      )
+      WHERE id = $8"
+      values = [@name, @breed, @city, @admis_date, @adopt_date, @adopted_by, @adoptable]
+      SqlRunner.run( sql, values )
+    end
+
 end
