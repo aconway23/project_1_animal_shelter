@@ -3,7 +3,7 @@ require_relative('../db/sql_runner/')
 
 class Animal
 
-  attr_reader :name, :breed, :city, :admis_date, :adopt_date, :adoptable, :adopted_by
+  attr_reader :name, :breed, :city, :admis_date, :adopt_date, :adoptable, :adopted_by, :id
 
   def initialize(options)
     @name = options['name']
@@ -16,6 +16,10 @@ class Animal
       @adopted_by = options['adopted_by'].to_i
     end
 
+    if options["id"] != nil
+      @id = options["id"].to_i
+    end
+  end
 
     def save
       sql = "INSERT INTO animals
@@ -39,15 +43,20 @@ class Animal
 
     end
 
+    def self.all
+      sql = "SELECT * FROM animals"
+      values = []
+      animals = SqlRunner.run(sql, values)
+      result = animals.map{ |animal| Animal.new(animals)}
+      return result
+    end
 
 
+    def self.delete_all
+      sql = "DELETE FROM animals"
+      values = []
+      SqlRunner.run( sql, values )
+      return nil
+    end
 
-
-
-
-
-
-
-
-  end
 end

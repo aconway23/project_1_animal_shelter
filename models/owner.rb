@@ -20,11 +20,6 @@ class Owner
   end
 
 
-
-
-
-
-
   def save
     sql = "INSERT INTO owners
     (
@@ -56,7 +51,7 @@ class Owner
   end
 
 
-  def self.delete_all()
+  def self.delete_all
     sql = "DELETE FROM owners"
     values = []
     SqlRunner.run( sql, values )

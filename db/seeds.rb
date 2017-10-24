@@ -2,7 +2,9 @@ require_relative('../models/owner.rb')
 require_relative('../models/animal.rb')
 require('pry')
 
-Owner.delete_all()
+Animal.delete_all
+Owner.delete_all
+
 
 hash = {
   "first_name" => "Dawg",
@@ -16,7 +18,6 @@ hash = {
 owner1 = Owner.new(hash)
 owner1.save()
 
- # Animal.delete_all()
 
 animal1 = Animal.new({
 
