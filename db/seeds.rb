@@ -52,6 +52,7 @@ animal2 = Animal.new({
   "breed" => "Gorilla",
   "city" => "Edinburgh",
   "admis_date" => "2001-04-05",
+  "image_url" => "http://animals.sandiegozoo.org/sites/default/files/2016-09/Gorilla_ZN.jpg",
   "adoptable" => false
 })
 
@@ -65,6 +66,7 @@ animal3 = Animal.new({
   "breed" => "Panda",
   "city" => "Edinburgh",
   "admis_date" => "2006-08-08",
+  "image_url" => "https://media4.s-nbcnews.com/j/newscms/2016_36/1685951/ss-160826-twip-05_8cf6d4cb83758449fd400c7c3d71aa1f.nbcnews-ux-2880-1000.jpg",
   "adoptable" => false
 })
 
@@ -77,6 +79,7 @@ animal4 = Animal.new({
   "breed" => "Crocodile",
   "city" => "Edinburgh",
   "admis_date" => "2010-03-01",
+  "image_url" => "https://news.nationalgeographic.com/content/dam/news/2016/05/24/nile-crocodile/01-nile-crocodile-florida.jpg",
   "adoptable" => false
 })
 
