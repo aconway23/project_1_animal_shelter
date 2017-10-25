@@ -1,0 +1,66 @@
+<form method="post" action="/animals">
+  <div class="field">
+  <label for="name">Name:</label>
+  <input id="name" type="text" name="name" />
+</div>
+
+<br>
+
+  <div class="field">
+  <label for="breed">Breed:</label>
+  <input id="breed" type="text" name="breed" />
+</div>
+
+<br>
+
+  <div class="field">
+    <label for="image-url">Image url:</label>
+    <input id="image-url" type="text" name="image_url" />
+  </div>
+<br>
+
+<div class="field">
+  <label for="city">City:</label>
+  <input id="city" type="text" name="city" />
+</div>
+
+<br>
+
+
+<div class="field">
+  <label for="admis_date">Admis Date:</label>
+  <input id="admis_date" type="date" name="admis_date" />
+</div>
+
+<br>
+
+
+<div class="field">
+  <label for="adopt_date">Adopt Date:</label>
+  <input id="adopt_date" type="date" name="adopt_date" />
+</div>
+
+<br>
+
+
+<div class="field">
+  <label for="adoptable">Adoptable:</label>
+  <input id="adoptable" type="text" name="adoptable" />
+</div>
+
+<br>
+
+<div class="field">
+  <label for="adopted_by">Adopted By:</label>
+  <select name="adopted_by">
+    <% for owner in @owners %>
+    <option value="<%= owner.id %>"><%= owner.pretty_name() %></option>
+    <% end %>
+  </select>
+  <!-- <input id="adopted_by" type="text" name="adopted_by" /> -->
+</div>
+
+
+  <input type="submit" value="New Owner" />
+
+</form>

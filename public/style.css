@@ -1,6 +1,13 @@
 body {
-  font-family: 'Roboto', Tahoma;
+font-family: 'Asul', sans-serif;
+
+  font-size: 40px;
   font-weight: 300;
   padding: 30px 0;
+  background-color: fuchsia;
 
+}
+
+.image {
+  width:200px;
 }

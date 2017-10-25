@@ -1,0 +1,14 @@
+<!-- <p>id: <%= @owner.id %></p> -->
+  <p>Name: <%= @owner.pretty_name %></p>
+  <p>Review date: <%= @owner.review_date %></p>
+  <p>Address: <%= @owner.address %></p>
+  <p>Email: <%= @owner.email %></p>
+  <p>Phone: <%= @owner.phone %></p>
+  <br>
+  <br>
+  <h2>Animals adopted:</h2>
+
+  <% for animal in @animals %>
+    <p>Name: <a href="/animal/<%= animal.id %>"> <%= animal.name %> </a> </p>
+  <% end %>
+  <!-- <form method="post" action="" -->

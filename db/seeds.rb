@@ -18,6 +18,17 @@ hash = {
 owner1 = Owner.new(hash)
 owner1.save()
 
+hash = {
+  "first_name" => "Hue",
+  "last_name" => "Mann",
+  "review_date" => "2000-01-01",
+  "address" => "Sand House, Edinburgh",
+  "email" => "hm@gmail.com",
+  "phone" => "07891233666"
+}
+
+owner22 = Owner.new(hash)
+owner22.save()
 
 animal1 = Animal.new({
 

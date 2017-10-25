@@ -13,22 +13,29 @@ end
 post '/owners' do
   @owner = Owner.new( params )
   @owner.save()
-  erb(:index)
+  redirect to '/owners'
 end
 
 post '/owners/:id/delete' do
   @owner = Owner.find( params[:id].to_i )
   @owner.delete()
-  erb(:destroy)
+  erb(:"owners/destroy")
 end
 
 post '/owners/:id' do
   @owner = Owner.new( params )
   @owner.update()
-  erb(:update)
+  erb(:"owners/update")
 end
 
-get '/owners/' do
+get '/owners/:id' do
   @owner = Owner.find( params[:id].to_i )
-  erb(:show)
+
+  #@owner.pretty_name
+  #@owner['first_name'] + ' ' + @owner['last_name']
+  #Animal.find_by_owner_id(@owner["id"])
+
+  @animals = @owner.animals()
+
+  erb(:"owners/show")
 end

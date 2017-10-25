@@ -17,6 +17,7 @@ CREATE TABLE animals (
   city varchar(255),
   admis_date DATE,
   adopt_date DATE,
+  image_url varchar(255),
   breed varchar(255),
   adopted_by int4 references owners(id),
   adoptable boolean

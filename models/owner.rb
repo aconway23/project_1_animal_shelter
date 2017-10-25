@@ -26,6 +26,8 @@ class Owner
   end
 
 
+
+
   def save
     sql = "INSERT INTO owners
     (
@@ -85,6 +87,13 @@ class Owner
     SqlRunner.run( sql, values )
   end
 
+  def animals()
+    sql = "SELECT * FROM animals
+          WHERE adopted_by = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|animal_hash| Animal.new(animal_hash)}
+  end
 
   def self.find(id)
     sql = "SELECT * FROM owners WHERE id = $1"
