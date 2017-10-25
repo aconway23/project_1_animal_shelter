@@ -14,13 +14,18 @@ end
 post '/animals' do
   @animal = Animal.new( params )
   @animal.save()
-  erb(:index)
+  redirect to "/animals"
 end
 
 post '/animals/:id/delete' do
   @animal = Animal.find( params[:id].to_i )
   @animal.delete()
-  erb(:destroy)
+  redirect to '/animals'
+end
+
+get '/animals/:id' do
+  @animal = Animal.find( params[:id].to_i)
+  erb(:"animals/show")
 end
 
 post '/animals/:id' do

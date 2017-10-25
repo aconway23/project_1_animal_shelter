@@ -37,6 +37,7 @@ animal1 = Animal.new({
   "city" => "Edinburgh",
   "admis_date" => "1999-12-12",
   "adopt_date" => "2000-03-03",
+  "image_url" => "https://www.funnypica.com/wp-content/uploads/2012/12/Ugly-Dog-09.jpg",
   "adopted_by" => owner1.id,
   "adoptable" => true
 })

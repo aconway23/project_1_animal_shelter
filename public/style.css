@@ -4,10 +4,15 @@ font-family: 'Asul', sans-serif;
   font-size: 40px;
   font-weight: 300;
   padding: 30px 0;
-  background-color: fuchsia;
+  background-color: lightblue;
 
 }
 
 .image {
   width:200px;
+}
+
+.sub {
+  width:200px;
+  height:200px;
 }

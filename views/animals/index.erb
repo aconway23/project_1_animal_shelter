@@ -1,7 +1,10 @@
-<% for animal in @animals %>
-Name: <%= animal.name %>
-<img class="image" src="<%= animal.image_url() %>" />
+<% @animals.each do |animal| %>
+<div class="animal">
+  <p>Name: <%= animal.name %></p>
+  <p>Breed: <%= animal.breed %></p>
 
-<br >
-<br >
+</div>
+<a href="/animals/<%= animal.id %>">Show details</a>
+<br />
+<br />
 <% end %>

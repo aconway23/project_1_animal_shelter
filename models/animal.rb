@@ -22,6 +22,13 @@ class Animal
     end
   end
 
+
+  def pretty_name()
+      return "#{@first_name}"
+  end
+
+
+
     def save
       sql = "INSERT INTO animals
       (
@@ -51,6 +58,13 @@ class Animal
       animals = SqlRunner.run(sql, values)
       result = animals.map{ |animal| Animal.new(animal)}
       return result
+    end
+
+    def delete()
+      sql = "DELETE FROM animals WHERE id = $1"
+      values = [@id]
+      SqlRunner.run( sql, values )
+      return nil
     end
 
 
