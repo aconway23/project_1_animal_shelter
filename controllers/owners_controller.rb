@@ -7,13 +7,13 @@ get '/owners' do
 end
 
 get '/owners/new' do
-  erb(:index)
+  erb(:"owners/create")
 end
 
 post '/owners' do
   @owner = Owner.new( params )
   @owner.save()
-  erb(:create)
+  erb(:index)
 end
 
 post '/owners/:id/delete' do
@@ -26,4 +26,9 @@ post '/owners/:id' do
   @owner = Owner.new( params )
   @owner.update()
   erb(:update)
+end
+
+get '/owners/' do
+  @owner = Owner.find( params[:id].to_i )
+  erb(:show)
 end
