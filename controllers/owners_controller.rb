@@ -25,8 +25,17 @@ end
 post '/owners/:id' do
   @owner = Owner.new( params )
   @owner.update()
-  erb(:"owners/update")
+  redirect to "/owners/#{params[:id]}"
 end
+
+get '/owners/:id/edit' do
+  @owner = Owner.find( params[:id].to_i)
+
+  @animals = Animal.all
+  erb(:"owners/edit")
+end
+
+
 
 get '/owners/:id' do
   @owner = Owner.find( params[:id].to_i )

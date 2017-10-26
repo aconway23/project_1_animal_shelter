@@ -9,6 +9,11 @@
 <% if @owner != nil %>
   <p>Adopted By: <%= @owner.pretty_name() %></p>
 <% end %>
+
+<a href="/animals/<%= @animal.id %>/edit">
+  EDIT Animal
+</a>
+
 <form action="/animals/<%= @animal.id %>/delete" method="post">
   <input class="sub" type="submit" value="Delete" />
 </form>

@@ -5,7 +5,12 @@
   <p>Email: <%= @owner.email %></p>
   <p>Phone: <%= @owner.phone %></p>
   <br>
+
+    <a href="/owners/<%= @owner.id %>/edit">
+      EDIT OWNER
+    </a>
   <br>
+
   <h2>Animals adopted:</h2>
 
   <% for animal in @animals %>

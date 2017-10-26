@@ -1,0 +1,48 @@
+<form method="post" action="/owners/<%= @owner.id %>">
+  <div class="field">
+  <label for="first-name">First Name:</label>
+  <input id="name" value="<%= @owner.first_name %>" type="text" name="first_name" />
+</div>
+
+<br>
+
+  <div class="field">
+  <label for="last-name">Last Name:</label>
+  <input id="last-name" value="<%= @owner.last_name %>" type="text" name="last_name" />
+</div>
+
+<br>
+
+  <div class="field">
+    <label for="review-date">Review Date url:</label>
+    <input id="review-date" value="<%= @owner.review_date %>" type="date" name="review_date" />
+  </div>
+<br>
+
+<div class="field">
+  <label for="address">Address:</label>
+  <input id="address" value="<%= @owner.address %>" type="text" name="address" />
+</div>
+
+<br>
+
+
+<div class="field">
+  <label for="email">Email:</label>
+  <input id="email" value="<%= @owner.email %>" type="text" name="email" />
+</div>
+
+<br>
+
+
+<div class="field">
+  <label for="phone">Phone:</label>
+  <input id="phone" value="<%= @owner.phone %>" type="number" name="phone" />
+</div>
+
+<br>
+
+
+  <input type="submit" value="Update" />
+
+</form>

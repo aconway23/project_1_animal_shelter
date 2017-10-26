@@ -39,7 +39,7 @@ end
 post '/animals/:id' do
   @animal = Animal.new( params )
   @animal.update()
-  erb(:update)
+  redirect to "/animals/#{params[:id]}"
 end
 
 get '/animals/' do
