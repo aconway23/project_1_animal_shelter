@@ -25,10 +25,15 @@ end
 
 get '/animals/:id' do
   @animal = Animal.find( params[:id].to_i)
-
   @owner = Owner.find( @animal.adopted_by().to_i )
-
   erb(:"animals/show")
+end
+
+get '/animals/:id/edit' do
+  @animal = Animal.find( params[:id].to_i)
+  @owner = Owner.find( @animal.adopted_by().to_i )
+  @owners = Owner.all
+  erb(:"animals/edit")
 end
 
 post '/animals/:id' do
