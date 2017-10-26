@@ -1,13 +1,14 @@
 <p>Name: <%= @animal.pretty_name %></p>
 <p>Breed: <%= @animal.breed %></p>
 <p>City: <%= @animal.city %></p>
-<p>Image Url: <img class="image" src="<%= @animal.image_url() %>" />
+<p><img class="image" src="<%= @animal.image_url() %>" />
 </p>
 <p>Admis Date: <%= @animal.admis_date %></p>
 <p>Adopt Date: <%= @animal.adopt_date %></p>
 <p>Adoptable: <%= @animal.adoptable %></p>
-<p>Adopted By: <%= @animal.adopted_by %></p>
-
+<% if @owner != nil %>
+  <p>Adopted By: <%= @owner.pretty_name() %></p>
+<% end %>
 <form action="/animals/<%= @animal.id %>/delete" method="post">
   <input class="sub" type="submit" value="Delete" />
 </form>

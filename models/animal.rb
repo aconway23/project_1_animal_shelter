@@ -24,7 +24,7 @@ class Animal
 
 
   def pretty_name()
-      return "#{@first_name}"
+      return "#{@name}"
   end
 
 

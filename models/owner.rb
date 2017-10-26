@@ -99,8 +99,13 @@ class Owner
     sql = "SELECT * FROM owners WHERE id = $1"
     values = [id]
     owners = SqlRunner.run( sql, values )
-    result = Owner.new( owners.first )
-    return result
+
+    if(owners.first != nil)
+      result = Owner.new( owners.first )
+      return result
+    end
+
+    return nil
   end
 
 

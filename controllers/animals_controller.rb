@@ -25,6 +25,9 @@ end
 
 get '/animals/:id' do
   @animal = Animal.find( params[:id].to_i)
+
+  @owner = Owner.find( @animal.adopted_by().to_i )
+
   erb(:"animals/show")
 end
 
